@@ -1,6 +1,6 @@
 import request, { Response } from 'request';
 
-//Write a function that return an argument after 1 second.
+// Write a function that return an argument after 1 second.
 
 console.log('start');
 
@@ -14,7 +14,7 @@ waitASecond('peter', arg => {
   return console.log('done', arg);
 });
 
-//Write a countdown function
+// Write a countdown function
 function countDown(arg: string, cnt: number, cb: (arg: string, cnt: number, end: boolean) => void) {
   setTimeout(function countDownTimer() {
     if (cnt > 0) {
@@ -37,7 +37,7 @@ interface Person {
   height: string;
 }
 
-//Call SWAPI api get person name with id 1
+// Call SWAPI api get person name with id 1
 function getPersonName(id: number) {
   request.get(`https://swapi.co/api/people/${id}`, function(error: any, response: Response) {
     if (response.statusCode === 200) {
@@ -49,7 +49,7 @@ function getPersonName(id: number) {
 
 getPersonName(1);
 
-//Get planet name by the id of a person (nested callbacks)
+// Get planet name by the id of a person (nested callbacks)
 interface Planet {
   name: string;
   rotation_period: string;
@@ -88,7 +88,7 @@ getHomePlanetById(1, (err, planet) => {
   console.log(planet);
 });
 
-//Call SWAPI api get person name with id 1 with a timeout timer
+// Call SWAPI api get person name with id 1 with a timeout timer
 function getNameById(peopleId: number, timeout: number, callback: (err: Error | null, name?: string) => void) {
   let timerExpired = false;
   const timerId = setTimeout(() => {
